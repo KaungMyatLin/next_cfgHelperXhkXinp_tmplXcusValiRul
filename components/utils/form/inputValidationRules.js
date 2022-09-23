@@ -4,7 +4,7 @@
 export function requiredRul_usinTmpl(fieldName) {
     return validtnRul_objTmpl(
         "requiredField"
-        , "${fieldName} required"
+        , "required"
         , (inputVal, formObj) => inputVal.length !== 0
     )
 }
@@ -21,7 +21,7 @@ export function maxLengthRul_usinTmpl(fieldName, maxChar) {
     return validtnRul_objTmpl(
         "maxLength of ${fieldName}"
         , `${fieldName} should contain lessthan ${maxChar} characters`
-        , (inputVal, formObj) => inputVal.length <= minChar
+        , (inputVal, formObj) => inputVal.length <= maxChar
     )
 }
 
