@@ -1,10 +1,9 @@
-import cusCmp_usedTmpl from "@components/formInpCmp_Tmpl/InpCmp_Tmpl"
-
 import {
     requiredRul_usinTmpl,
     minLengthRul_usinTmpl,
     maxLengthRul_usinTmpl,
 } from "./inputValidationRules";
+import CusCmp_usedTmpl from '../../formInpCmp_tmpl/InpCmp_tmpl'
 
     /**
  * @param {string} label - label to show with the form input
@@ -24,37 +23,37 @@ export const signUpForm_objRpr = {
     }
     , phField: { ...cFrmFields_config("Phone", "phone", "phone" )
         , validationRules: [
-            requiredRule("phone", 10)
-            , maxLengthRule("phone")
-            , minLengthRule("phone", 25)
+            requiredRul_usinTmpl("phone", 10)
+            , minLengthRul_usinTmpl("phone", 3)
+            , maxLengthRul_usinTmpl("phone", 25)
         ] 
     }
     , emField: { ...cFrmFields_config("Email", "email", "email" ) 
         , validationRules: [
-            requiredRule("email", 10)
-            , maxLengthRule("email")
-            , minLengthRule("email", 25)
+            requiredRul_usinTmpl("email", 10)
+            , minLengthRul_usinTmpl("email", 3)
+            , maxLengthRul_usinTmpl("email", 25)
         ] 
     }
     , addrFeild: { ...cFrmFields_config("Address", "address", "address" ) 
         , validationRules: [
-            requiredRule("address", 10)
-            , maxLengthRule("address")
-            , minLengthRule("address", 25)
+            requiredRul_usinTmpl("address", 10)
+            , minLengthRul_usinTmpl("address", 3)
+            , maxLengthRul_usinTmpl("address", 25)
         ] 
     }
     , pwField: { ...cFrmFields_config("Password", "password", "password" ) 
         , validationRules: [
-            requiredRule("password", 10)
-            , maxLengthRule("password")
-            , minLengthRule("password", 25)
+            requiredRul_usinTmpl("password", 10)
+            , minLengthRul_usinTmpl("password", 3)
+            , maxLengthRul_usinTmpl("password", 25)
         ] 
     }
     , cfmPwField: { ...cFrmFields_config("Confirm Password", "cmpassword", "cmpassword" ) 
         , validationRules: [
-            requiredRule("cmpassword", 10)
-            , maxLengthRule("cmpassword")
-            , minLengthRule("cmpassword", 25)
+            requiredRul_usinTmpl("cmpassword", 10)
+            , minLengthRul_usinTmpl("cmpassword", 3)
+            , maxLengthRul_usinTmpl("cmpassword", 25)
         ] 
     }
 }
@@ -63,12 +62,12 @@ export const signUpForm_objRpr = {
 
 function cFrmFields_config(label, type, name, defaultValue='' ) {
     return {
-        cusField_fnRjsx: (id, onchangehdl, inpBoxValue, isValid, errorMsg) => {
+        cusField_fnRjsx: (id, inpBoxValue, isValid, onChangeHdl, errorMsg) => {
             return (
-                <cusCmp_usedTmpl key={id} 
+                <CusCmp_usedTmpl key={id} 
                 label={label} type={type} name={name} 
                 value={inpBoxValue} isValid={isValid} 
-                onchangehdl={onchangehdl} errorMsg={errorMsg}
+                onChangeHdl={onChangeHdl} errorMsg={errorMsg}
                 />
             )
         }

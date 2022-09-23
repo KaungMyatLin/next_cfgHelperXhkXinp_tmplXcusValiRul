@@ -1,5 +1,5 @@
-import signUpComp from '../components/signUp_Cmp'
+import Signup_Cmp from '../components/signUp_Cmp'
 
 export default function Home() {
-  return (<signUpComp />)
+  return (<Signup_Cmp />)
 }

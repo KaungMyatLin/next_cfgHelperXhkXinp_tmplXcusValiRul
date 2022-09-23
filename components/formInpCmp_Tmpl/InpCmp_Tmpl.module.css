@@ -4,12 +4,12 @@
     margin: 0 0 15px;
 }
 
-label {
+.field_lbl {
     margin: 0 0 6px 0;
     font-size: 1.1rem;
 }
 
-input {
+.field_inp {
     padding: 10px;
     border: none;
     border-bottom: 1px solid #777;

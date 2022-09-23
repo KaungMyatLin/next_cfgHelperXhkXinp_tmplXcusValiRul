@@ -13,7 +13,7 @@ function useForm (formObj) {
             }
             return true
             },
-        [second],
+        [form],
     )
 
     const onInputChange = useCallback((e) => {
@@ -37,9 +37,9 @@ function useForm (formObj) {
 
     const renderFormInps = () => {
         return Object.values(form).map(
-            (inpObj) => {
-                const { cusField_fnRjsx, label, value, valid, errorMsg, touched } = inpObj; // obj returned 7 props; cusField_fnRjsx, label, value, valid, errorMsg, touched, validaitonRules 
-                return cusField_fnRjsx(label, value, valid, errorMsg, touched, onInputChange)
+            (inpObj) => {   // obj returned 7 props; cusField_fnRjsx, label, value, valid, errorMsg, touched, validaitonRules 
+                const { cusField_fnRjsx, label, value, valid, errorMsg, touched } = inpObj; 
+                return cusField_fnRjsx( label, value, valid, onInputChange, errorMsg);
             }
         )
     }
@@ -59,3 +59,4 @@ function useForm (formObj) {
 
     return { renderFormInps, isFormValid }
 }
+export default useForm;
