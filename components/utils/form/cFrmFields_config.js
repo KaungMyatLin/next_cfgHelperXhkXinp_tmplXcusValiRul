@@ -23,21 +23,21 @@ export const signUpForm_objRpr = {
         ] 
     }
     , email: { ...cFrmFields_config("Email", "email", "email" ) 
-        , validationRules: [
+        , validtnRul: [
             requiredRul_usinTmpl("email")
             , minLengthRul_usinTmpl("email", 10)
             , maxLengthRul_usinTmpl("email", 25)
         ] 
     }
     , password: { ...cFrmFields_config("Password", "password", "password" ) 
-        , validationRules: [
+        , validtnRul: [
             requiredRul_usinTmpl("password")
             , minLengthRul_usinTmpl("password", 8)
             , maxLengthRul_usinTmpl("password", 20)
         ] 
     }
     , cmpassword: { ...cFrmFields_config("Confirm Password", "cmpassword", "cmpassword" ) 
-        , validationRules: [
+        , validtnRul: [
             pwMatchRul_usinTmpl()
         ] 
     }
