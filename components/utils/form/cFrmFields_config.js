@@ -15,28 +15,28 @@ import CusCmp_usedTmpl from '../../formInpCmp_tmpl/InpCmp_tmpl'
 
 export const signUpForm_objRpr = {
     // config returns 6 props; cusField_fnRjsx, label, value, valid, errorMsg, touched, validationRules
-    name: {  ...cFrmFields_config("Full Name", "text", "name" )
+    name: {  ...cFrmFields_cHelperFn("Full Name", "text", "name" )
         , validtnRul: [
             requiredRul_usinTmpl("name")
             , minLengthRul_usinTmpl("name", 3)
             , maxLengthRul_usinTmpl("name", 25)
         ] 
     }
-    , email: { ...cFrmFields_config("Email", "email", "email" ) 
+    , email: { ...cFrmFields_cHelperFn("Email", "email", "email" ) 
         , validtnRul: [
             requiredRul_usinTmpl("email")
             , minLengthRul_usinTmpl("email", 10)
             , maxLengthRul_usinTmpl("email", 25)
         ] 
     }
-    , password: { ...cFrmFields_config("Password", "password", "password" ) 
+    , password: { ...cFrmFields_cHelperFn("Password", "password", "password" ) 
         , validtnRul: [
             requiredRul_usinTmpl("password")
             , minLengthRul_usinTmpl("password", 8)
             , maxLengthRul_usinTmpl("password", 20)
         ] 
     }
-    , cmpassword: { ...cFrmFields_config("Confirm Password", "cmpassword", "cmpassword" ) 
+    , cmpassword: { ...cFrmFields_cHelperFn("Confirm Password", "cmpassword", "cmpassword" ) 
         , validtnRul: [
             pwMatchRul_usinTmpl()
         ] 
@@ -45,7 +45,7 @@ export const signUpForm_objRpr = {
 
 
 
-function cFrmFields_config(label, type, name, defaultValue='' ) {
+function cFrmFields_cHelperFn(label, type, name, defaultValue='' ) {
     return {
         cusField_fnRjsx: (id, inpBoxValue, isValid, onChangeHdl, errorMsg) => {
             console.log("cFrmFields_config cusField_fnRjsx line66")
